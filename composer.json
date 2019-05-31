@@ -15,7 +15,8 @@
         "illuminate/events": "*",
         "illuminate/database": "^5.8",
         "illuminate/view": "*",
-        "overtrue/validation": "^2.0"
+        "overtrue/validation": "^2.0",
+        "doctrine/orm": "^2.6"
     },
     "autoload": {
         "psr-4": {
