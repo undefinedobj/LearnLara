@@ -7,6 +7,10 @@ $app['router']->get('/', function(){
 //Laravel-Eloquent (ORM) 查询
 $app['router']->get('welcome', 'App\Http\Controllers\WelcomeController@index');
 
+//Laravel-Eloquent (ORM) insert
+$app['router']->get('user/create', 'App\Http\Controllers\UserController@create');
+$app['router']->post('user', 'App\Http\Controllers\UserController@store'); // Fatal error - 致命错误
+
 //Array and Tightenco\Collect\Support\Collection
 $app['router']->get('demo/array', 'App\Http\Controllers\DemoController@index');
 $app['router']->get('demo/carbon', 'App\Http\Controllers\DemoController@carbon');
