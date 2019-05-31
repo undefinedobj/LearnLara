@@ -1,12 +1,24 @@
-
 <?php
+
+namespace App\Http\Controllers;
+
+class DiscountCouponController
+{
+    public function index()
+    {
+        echo '<h1>Promotion / Discount Codes</h1>';
+        echo '<pre>';
+        print_r($this->generate_promotion_code(100,'',10));
+        echo '</pre>';
+    }
+
     /**
-    * PHP批量生成优惠码 
-    * @param int $no_of_codes//定义一个int类型的参数 用来确定生成多少个优惠码
-    * @param array $exclude_codes_array//定义一个exclude_codes_array类型的数组
-    * @param int $code_length //定义一个code_length的参数来确定优惠码的长度
-    * @return array//返回数组
-    */
+     * PHP批量生成优惠码
+     * @param int $no_of_codes//定义一个int类型的参数 用来确定生成多少个优惠码
+     * @param array $exclude_codes_array//定义一个exclude_codes_array类型的数组
+     * @param int $code_length //定义一个code_length的参数来确定优惠码的长度
+     * @return array//返回数组
+     */
     function generate_promotion_code($no_of_codes,$exclude_codes_array='',$code_length =6)
     {
         $characters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -40,8 +52,4 @@
         }
         return $promotion_codes;
     }
-    echo '<h1>Promotion / Discount Codes</h1>';
-    echo '<pre>';
-    print_r(generate_promotion_code(100,'',10));
-    echo '</pre>';
-?> 
+}

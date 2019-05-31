@@ -15,7 +15,6 @@
         "illuminate/events": "*",
         "illuminate/database": "^5.8",
         "illuminate/view": "*",
-        "doctrine/orm": "*",
         "overtrue/validation": "^2.0"
     },
     "autoload": {

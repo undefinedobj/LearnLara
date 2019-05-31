@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="validation.php" method="get">
+<form action="/validation" method="POST">
     <input type="text" name="username" value="root"><br>
     <input type="text" name="password" value=""><br>
     <input type="submit">

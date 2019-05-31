@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Container\Container;
 
 class WelcomeController
 {
     public function index(User $user)
     {
-//        return 'New WelcomeController Class Success';
+        $user = $user->first();
 
-        $result = $user->first();
+//        dd($user->toArray());
+//        dd($user->getAttributes());
 
-        dd($result->toArray());
+        $app = Container::getInstance();
+
+        $factory = $app->make('view');
+
+        return $factory->make('welcome', ['user' => $user]);
     }
 
 }
