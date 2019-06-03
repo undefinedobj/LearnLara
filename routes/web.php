@@ -41,3 +41,14 @@ $app['router']->get('gen-random-str', 'App\Http\Controllers\GenRandomStrControll
 
 //序列化
 $app['router']->get('serialize', 'App\Http\Controllers\SerializeController@index');
+
+/*
+|--------------------------------------------------------------------------
+| The interview question
+|--------------------------------------------------------------------------
+|
+| The interview 题库
+| http://www.php.cn/toutiao-415599.html
+|
+*/
+$app['router']->get('interview/bubblingSort', 'App\Http\Controllers\InterviewController@index');
