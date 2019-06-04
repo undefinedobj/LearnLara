@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 class ArrayController
 {
     /**
-     * ... 数组展开运算符, 可以减少 foreach 的使用
+     * ... 数组展开运算符, 可以减少 foreach 的使用, [注意] 仅适用于带数字键的数组
      *
      * https://segmentfault.com/q/1010000006789348?_ea=1131965
      * http://php.net/manual/zh/migration56.new-features.php
