@@ -7,6 +7,10 @@ $app['router']->get('/', function(){
 // Array expansion operator - 数组展开运算符, 可以减少 foreach 的使用, [注意] 仅适用于带数字键的数组
 $app['router']->get('array', 'App\Http\Controllers\ArrayController@index');
 
+//Alisms 发送短信验证码
+$app['router']->get('alisms', 'App\Http\Controllers\AlismsController@index');
+
+
 //Laravel-Eloquent (ORM) 查询
 $app['router']->get('welcome', 'App\Http\Controllers\WelcomeController@index');
 
