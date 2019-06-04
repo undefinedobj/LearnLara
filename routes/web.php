@@ -4,6 +4,9 @@ $app['router']->get('/', function(){
     return '<h1>手动构建 Laravel 框架成功<h1/>';
 });
 
+// Array expansion operator - 数组展开运算符, 可以减少 foreach 的使用
+$app['router']->get('array', 'App\Http\Controllers\ArrayController@index');
+
 //Laravel-Eloquent (ORM) 查询
 $app['router']->get('welcome', 'App\Http\Controllers\WelcomeController@index');
 
