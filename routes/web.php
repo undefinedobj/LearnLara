@@ -9,7 +9,7 @@ $app['router']->get('array', 'App\Http\Controllers\ArrayController@index');
 
 //Alisms 发送短信验证码
 $app['router']->get('alisms', 'App\Http\Controllers\AlismsController@index');
-
+$app['router']->post('alisms', 'App\Http\Controllers\AlismsController@send');
 
 //Laravel-Eloquent (ORM) 查询
 $app['router']->get('welcome', 'App\Http\Controllers\WelcomeController@index');
