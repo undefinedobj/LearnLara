@@ -1,7 +1,7 @@
 <?php
 
 $app['router']->get('/', function(){
-    return '<h1>手动构建 Laravel 框架成功<h1/>';
+    return '<h1>山寨版 Laravel 框架构建成功<h1/>';
 });
 
 // Array expansion operator - 数组展开运算符, 可以减少 foreach 的使用, [注意] 仅适用于带数字键的数组
