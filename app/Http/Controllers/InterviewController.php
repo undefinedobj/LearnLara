@@ -9,10 +9,10 @@ class InterviewController
         $array = [23,12,34,2,67];
 
 //        冒泡排序
-        return $this->bubblingSort($array);
+//        return $this->bubblingSort($array);
 
 //        快速排序
-//        return $this->quickSort($array);
+        return $this->quickSort($array);
 
     }
 
@@ -57,31 +57,30 @@ class InterviewController
      */
     public function quickSort($array)
     {
-        if (count($array) <= 1) return $array;
+        if (count($array) <= 1) {
+            return $array;
+        }
 
         $key = $array[0];
 
-        $left_arr = array();
+        $left_arr = [];
 
-        $right_arr = array();
+        $right_arr = [];
 
         for ($i=1; $i<count($array); $i++){
 
-            if ($array[$i] <= $key)
-
+            if ($array[$i] <= $key){
                 $left_arr[] = $array[$i];
-
-            else
-
+            } else {
                 $right_arr[] = $array[$i];
-
+            }
         }
 
         $left_arr = $this->quickSort($left_arr);
 
         $right_arr = $this->quickSort($right_arr);
 
-        return array_merge($left_arr, array($key), $right_arr);
+        return array_merge($left_arr, [$key], $right_arr);
     }
 
 }
