@@ -59,3 +59,8 @@ $app['router']->get('serialize', 'App\Http\Controllers\SerializeController@index
 |
 */
 $app['router']->get('interview/bubblingSort', 'App\Http\Controllers\InterviewController@index');
+//array_merge_recursive — 递归地合并一个或多个数组
+$app['router']->get('interview/merge-recursive', 'App\Http\Controllers\InterviewController@mergeRecursive');
+
+$app['router']->get('interview/response-total', 'App\Http\Controllers\InterviewController@respnseTotal');
+$app['router']->post('interview/response-total', 'App\Http\Controllers\InterviewController@verifyTotal');
