@@ -58,7 +58,7 @@ $app['router']->get('serialize', 'App\Http\Controllers\SerializeController@index
 | http://www.php.cn/toutiao-415599.html
 |
 */
-$app['router']->get('interview/bubblingSort', 'App\Http\Controllers\InterviewController@index');
+$app['router']->get('interview/bubbling-sort', 'App\Http\Controllers\InterviewController@index');
 //array_merge_recursive — 递归地合并一个或多个数组
 $app['router']->get('interview/merge-recursive', 'App\Http\Controllers\InterviewController@mergeRecursive');
 //is_numeric 检查用户提交的数据是否为整数
