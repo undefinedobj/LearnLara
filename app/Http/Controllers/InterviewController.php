@@ -156,5 +156,41 @@ class InterviewController
 
         }
     }
+
+    /**
+     * [ 问题 ]：PHP的strtolower()和strtoupper()函数在安装非中文系统的服务器下可能会导致将汉字转换为乱码,请写
+     * 两个替代的函数实现兼容Unicode文字的字符串大小写转换.
+     *
+     * 中文是由多字节组成的，而只有英文系统的单个英文字符只有一个字节，所以该系统把中文的每一个字节
+     * 都做了strtolower()处理,改变后的中文字节拼接在一起就成了乱码(新生成的编码映射对应的字符可能就不是中文了).
+     *
+     * 手动解决：用str_split(string string,intstring,intsplit_length = 1)按每个字节切割，像中文能切割成三
+     * 个字节，对识别到的字节若是英文字母则进行转换.
+     *
+     * @return string
+     */
+    public function strToUpper($str='null')
+    {
+        $str = 'a中你继续F@#$%^&*(BMDJFDoalsdkfjasl';
+
+        // str_split() 函数把字符串分割到数组中
+        $split = str_split($str, 1);
+
+        $result = '';
+
+        foreach($split as $value){
+
+            // ord() 函数返回字符串的首个字符的 ASCII 值
+            $value = ord($value);
+
+            if($value >= 97 && $value<= 122){
+                $value -= 32;
+            }
+
+            // chr() 函数从指定的 ASCII 值返回字符
+            $result .= chr($value);
+        }
+        return $result;
+    }
     
 }

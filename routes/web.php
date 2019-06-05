@@ -61,6 +61,8 @@ $app['router']->get('serialize', 'App\Http\Controllers\SerializeController@index
 $app['router']->get('interview/bubblingSort', 'App\Http\Controllers\InterviewController@index');
 //array_merge_recursive — 递归地合并一个或多个数组
 $app['router']->get('interview/merge-recursive', 'App\Http\Controllers\InterviewController@mergeRecursive');
-
+//is_numeric 检查用户提交的数据是否为整数
 $app['router']->get('interview/response-total', 'App\Http\Controllers\InterviewController@respnseTotal');
 $app['router']->post('interview/response-total', 'App\Http\Controllers\InterviewController@verifyTotal');
+//兼容Unicode文字的字符串大小写转换的功能
+$app['router']->get('interview/str-to-upper', 'App\Http\Controllers\InterviewController@strToUpper');
