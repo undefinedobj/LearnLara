@@ -32,31 +32,65 @@ class InterviewController
      */
     public function index()
     {
-        $array = [23,12,34,2,67];
+        /*
+         * 冒泡排序算法的 [原理] 如下：
+         *
+         * 比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+         *
+         * 对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
+         *
+         * 针对所有的元素重复以上的步骤，除了最后一个。
+         *
+         * 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
+         * */
+        $array = [36, 26, 8, 21, 6, 23, 1, 3, 16];
 
 //        冒泡排序
-//        return $this->bubblingSort($array);
+        return $this->bubbleSortOne($array);
 
 //        快速排序
-        return $this->quickSort($array);
-
+//        return $this->quickSort($array);
     }
 
     /**
-     * 冒泡排序算法的 [原理] 如下：
+     * 冒泡排序 方法【one】
      *
-     * 比较相邻的元素。如果第一个比第二个大，就交换他们两个。
-     *
-     * 对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
-     *
-     * 针对所有的元素重复以上的步骤，除了最后一个。
-     *
-     * 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
+     * @param $array
+     * @return array|bool
+     */
+    public function bubbleSortOne($array)
+    {
+        if (!is_array($array)) {
+            return false;
+        }
+
+        $count = count($array);
+        if ($count < 2) {
+            return $array;
+        }
+
+        for ($i = 0; $i < $count; $i++) {
+            for ($k = $i + 1; $k < $count; $k++) {
+                // $arr[$i] 和 $arr[$k] 是相邻的两个值
+                if ($array[$i] > $array[$k]) {
+                    // 前者大于后者，调换位置
+                    // 如果想要按照从大到小进行排序，改为 $arr[$i] < $arr[$k]
+                    $temp = $array[$i];
+                    $array[$i] = $array[$k];
+                    $array[$k] = $temp;
+                }
+            }
+        }
+        return $array;
+    }
+
+    /**
+     * 冒泡排序 方法【two】
      *
      * @param $array
      * @return mixed
      */
-    public function bubblingSort($array)
+    public function bubbleSortTwo($array)
     {
         $length = count($array);
 
