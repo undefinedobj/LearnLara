@@ -137,10 +137,15 @@ class InterviewController
         return $factory->make('interview.respnse-total');
     }
 
+    /**
+     * 请写一个函数来检查用户提交的数据是否为整数（不区分数据类型，可以为二进制、八进制、十进制、十六进制数字）
+     *
+     * @return string
+     */
     public function verifyTotal()
     {
         $jp_total = $this->request->request->get('jp_total');
-//dd($jp_total);
+        //dd($jp_total);
         if(! is_numeric($jp_total) || strpos($jp_total,".") !== false){
 
             return "不是整数";
