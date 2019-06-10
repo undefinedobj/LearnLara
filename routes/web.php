@@ -3,9 +3,16 @@
 $app['router']->get('/', function(){
     return '<h1>山寨版 Laravel 框架构建成功<h1/>';
 });
-
+/*
+|--------------------------------------------------------------------------
+| PHP - 数组操作练习 DEMO
+|--------------------------------------------------------------------------
+|
+*/
 // Array expansion operator - 数组展开运算符, 可以减少 foreach 的使用, [注意] 仅适用于带数字键的数组
 $app['router']->get('array', 'App\Http\Controllers\ArrayController@index');
+// 合并数组的三种方式     $array + $arr            array_merge()      array_merge_recursive()
+$app['router']->get('array/merge', 'App\Http\Controllers\ArrayController@merge');
 
 //Alisms 发送短信验证码
 $app['router']->get('alisms', 'App\Http\Controllers\AlismsController@index');
