@@ -10,27 +10,27 @@
 
 class SingletonPattern{
 
-    protected $rnd;
+    protected $rand;
 
-    protected static $ins = null;
+    protected static $_instance = null;
 
     protected function __construct()
     {
-        $this->rnd = mt_rand(10000, 99999);
+        $this->rand = mt_rand(10000, 99999);
     }
 
-    public static function getIns()
+    public static function getInstance()
     {
-        if (self::$ins === null) {
-            self::$ins = new self();
+        if (self::$_instance === null) {
+            self::$_instance = new self();
         }
 
-        return  self::$ins;
+        return  self::$_instance;
     }
 }
 
-$s1 = SingletonPattern::getIns();
-$s2 = SingletonPattern::getIns();
+$s1 = SingletonPattern::getInstance();
+$s2 = SingletonPattern::getInstance();
 
 echo '<pre/>';
 print_r($s1);echo '<br/>';
